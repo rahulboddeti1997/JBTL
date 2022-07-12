@@ -16,21 +16,34 @@ export default function Dashboard(props) {
   return (
     <View style={styles.container}>
         <Text style={main_styles.header}>Dashboard</Text>
-
+        <WhiteSpace />
+        <WhiteSpace />     
+        <WhiteSpace />
         <Card style={main_styles.dashboard}>
-
             <Card.Header title={<Text style={styles.header}>Total Outstanding</Text>} />
             <Card.Body>
-              <View style={{ height: 42 }}>
-                <Text style={styles.font }>Cash  </Text>
-                <Text style={styles.font}>Credit  </Text>
+              <View style={{ height: 50, padding:5 }}>
+                <Text style={styles.font }>Cash </Text>
+                <WhiteSpace />
+
+                <Text style={styles.font}>Credit </Text>
               </View>
             </Card.Body>
         </Card>
+        <WhiteSpace />
+
         <Button style={main_styles.button} onPress={() => {props.navigation.navigate('salespersons')}} type="primary">Sales Person</Button>
+        <WhiteSpace />
+
         <Button style={main_styles.button} onPress={() => {props.navigation.navigate('saleshistory')}} type="primary">History</Button>
+        <WhiteSpace />
+        
         <Button style={main_styles.button} onPress={() => {props.navigation.navigate('customer')}} type="primary">Customers</Button>
+        <WhiteSpace />
+       
         <Button style={main_styles.button} onPress={() => setModalVisible(true)} type="primary">Download Report</Button>
+        <WhiteSpace />
+        
         <Button style={main_styles.button} onPress={() => {props.navigation.navigate('products')}} type="primary">Products</Button>
         <View style={styles.centeredView}>
         <Modal
@@ -73,7 +86,7 @@ const styles = StyleSheet.create({
   },
   font : {
     color: '#fff',
-    fontSize:18
+    fontSize:18,
   },
   header: {
     color:'#fff', fontWeight:'bold', fontSize:25, textAlign:'center'
