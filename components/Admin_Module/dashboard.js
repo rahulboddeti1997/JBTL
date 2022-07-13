@@ -35,7 +35,7 @@ export default function Dashboard(props) {
         <Button style={main_styles.button} onPress={() => {props.navigation.navigate('salespersons')}} type="primary">Sales Person</Button>
         <WhiteSpace />
 
-        <Button style={main_styles.button} onPress={() => {props.navigation.navigate('saleshistory')}} type="primary">History</Button>
+        <Button style={main_styles.button} onPress={() => {props.navigation.navigate('historydashboard')}} type="primary">History</Button>
         <WhiteSpace />
         
         <Button style={main_styles.button} onPress={() => {props.navigation.navigate('customer')}} type="primary">Customers</Button>

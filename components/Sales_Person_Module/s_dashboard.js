@@ -3,15 +3,16 @@ import { StyleSheet, Text, View, TextInput, Image } from 'react-native';
 import Card from '@ant-design/react-native/lib/card';
 import Button from '@ant-design/react-native/lib/button';
 import { main_styles } from '../styles';
-
-
+import  WhiteSpace  from '@ant-design/react-native/lib/white-space';
 
 export default function SalesPersonDashboard(props) {
 
   return (
     <View style={styles.container}>
         <Text style={main_styles.header}>Dashboard</Text>
-
+        <WhiteSpace />
+        <WhiteSpace />     
+        <WhiteSpace />
         <Card style={main_styles.dashboard}>
             <Card.Header title={<Text style={styles.header}>Total Outstanding</Text>} />
             <Card.Body>
@@ -21,10 +22,20 @@ export default function SalesPersonDashboard(props) {
               </View>
             </Card.Body>
         </Card>
-        <Button style={main_styles.button} onPress={() => {props.navigation.navigate('saleshistory')}} type="primary">History</Button>
+        <WhiteSpace />
+
+        <Button style={main_styles.button} onPress={() => {props.navigation.navigate('historydashboard')}} type="primary">History</Button>
+        <WhiteSpace />
+       
         <Button style={main_styles.button} onPress={() => {props.navigation.navigate('customer')}} type="primary">Customers</Button>
+        <WhiteSpace />
+       
         <Button style={main_styles.button} onPress={() => {props.navigation.navigate('salesentry')}} type="primary">Sales Entry</Button>
+        <WhiteSpace />
+       
         <Button style={main_styles.button} onPress={() => {props.navigation.navigate('expenseEntry')}} type="primary">Expense Entry</Button>
+        <WhiteSpace />
+       
         <Button style={main_styles.button} onPress={() => {props.navigation.navigate('collectionEntry')}} type="primary">Collection Entry</Button>
 
     </View>

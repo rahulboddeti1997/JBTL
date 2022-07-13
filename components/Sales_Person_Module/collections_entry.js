@@ -41,7 +41,7 @@ export default function CollectionEntry() {
         <WhiteSpace />
         <WhiteSpace />
         <Pressable
-            style={[styles.button, styles.buttonClose]}
+            style={[styles.button]}
             onPress={() => setModalVisible()}
             >
               <Text style={styles.textStyle}>Submit</Text>
@@ -57,6 +57,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingTop:50,
   },
-  
+  button: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2,
+    backgroundColor: "#083d6fde",
+    width:120
+  },
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center"
+  },
 });
   

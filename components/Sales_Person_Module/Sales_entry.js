@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import {Picker} from "@react-native-picker/picker";
-import  Button  from '@ant-design/react-native/lib/button';
 import  WhiteSpace  from '@ant-design/react-native/lib/white-space';
 import InputItem from '@ant-design/react-native/lib/input-item';
 import { main_styles } from '../styles';
 import { Alert, Modal, Pressable } from "react-native";
+import Card from '@ant-design/react-native/lib/card';
+
 
 // import { ExclamationCircleFill } from 'antd-mobile-icons';
 
 export default function SalesEntry() {
   const [modalVisible, setModalVisible] = useState(false);
+  const [products, setProducts] = useState([]);
  
   return (
     <View style={styles.container}>
@@ -45,6 +47,12 @@ export default function SalesEntry() {
             style={main_styles.input}
            >
         </InputItem>
+        {products.map((i) => {
+              <Card style={styles.cust_cont}>
+                 <Text>Product1</Text>
+             </Card>
+        })}
+ 
         <WhiteSpace />
         <WhiteSpace />
         <Pressable
@@ -57,7 +65,7 @@ export default function SalesEntry() {
         <WhiteSpace />
         <WhiteSpace />
         <Pressable
-            style={[styles.button, styles.buttonClose]}
+            style={[styles.button]}
             onPress={() => setModalVisible()}
             >
               <Text style={styles.textStyle}>Submit</Text>
@@ -101,6 +109,9 @@ export default function SalesEntry() {
           </View>
         <WhiteSpace />
         <WhiteSpace />
+        <WhiteSpace />
+        <WhiteSpace />
+        <View style={styles.buttonwrap}>
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible()}
@@ -112,6 +123,7 @@ export default function SalesEntry() {
               onPress={() => setModalVisible(!modalVisible)}>
                 <Text style={styles.textStyle}>Close</Text>
             </Pressable>
+            </View>
           </View>
         </View>
       </Modal>
@@ -133,6 +145,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 22
   },
+  cust_cont: {
+    borderWidth:2,
+    border:'solid',
+    padding:10,
+    paddingBottom:13,
+    borderColor:'#00292fe8',
+    width:'92.5%',
+    marginTop:15
+  },
   modalView: {
     margin: 20,
     backgroundColor: "white",
@@ -152,13 +173,15 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 10,
     elevation: 2,
-    width:120
+    width:120,
+    backgroundColor: "#083d6fde",
+
   },
   buttonOpen: {
     backgroundColor: "#083d6fde",
   },
   buttonClose: {
-    backgroundColor: "#083d6fde",
+    marginRight: 10
   },
   textStyle: {
     color: "white",
@@ -168,5 +191,9 @@ const styles = StyleSheet.create({
   modalText: {
     marginBottom: 15,
     textAlign: "center"
+  },
+  buttonwrap: {
+    display: "flex",
+    flexDirection: "row"
   }
 });
