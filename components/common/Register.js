@@ -5,57 +5,21 @@ import Button  from '@ant-design/react-native/lib/button';
 import  WhiteSpace  from '@ant-design/react-native/lib/white-space';
 // import Cookies from 'js-cookie';
 
-export default function Login(props) {
+export default function Register(props) {
   const [username, setUserName] = useState(""); 
   const [password, setPassword] = useState(""); 
   const [showSubmitError, setShowSubmitError] = useState(false); 
   const [errorMsg, seterrorMsg] = useState(""); 
-
-  // const onSubmitSuccess = jwtToken => {
-  //   Cookies.set('jwt_token', jwtToken, {
-  //     expires: 30,
-  //   })
-  //   props.navigation.navigate('dashboard');
-  // }
-
-  // const onSubmitFailure = errorMsg => {
-  //   setShowSubmitError(true);
-  //   seterrorMsg(errorMsg);
-  // }
-
-  const submitForm = () => {
-    if (username=='admin'){
-      props.navigation.navigate('dashboard');
-    }
-    else if (username=='salesperson'){
-      props.navigation.navigate('salesPersonDashboard');
-    }
-  //   const {username, password} = this.state
-  //   const userDetails = {username, password}
-  //   const url = 'https://apis.ccbp.in/login'
-  //   const options = {
-  //     method: 'POST',
-  //     body: JSON.stringify(userDetails),
-  //   }
-  //   const response = await fetch(url, options)
-  //   const data = await response.json()
-  //   if (response.ok === true) {
-  //     onSubmitSuccess(data.jwt_token)
-  //   } else {
-  //     onSubmitFailure(data.error_msg)
-  //   }
-  }
 
   return (
     <View style={styles.container}>
       <WhiteSpace />
       <WhiteSpace />
       <WhiteSpace />
+      <Image style={styles.img} source={require('../../assets/jblogo.jpg')} />
       <WhiteSpace />
-      <Image style={styles.img} source={require('../assets/jblogo.jpg')} />
       <WhiteSpace />
-      <WhiteSpace />
-      <Text style={styles.header} className="header">Login</Text>
+      <Text style={styles.header} className="header">Register</Text>
       <WhiteSpace />
       <WhiteSpace />
       <TextInput
@@ -65,7 +29,13 @@ export default function Login(props) {
         placeholder="Username"
         keyboardType="default"
       />
-      <WhiteSpace />
+         <TextInput
+        style={styles.input}
+        onChange= {(e) => {setUserName(e.nativeEvent.text)}}
+        type='text'
+        placeholder="Email"
+        keyboardType="default"
+      />
       <TextInput
         style={styles.input}
         onChange= {(e) => {setPassword(e.nativeEvent.text)}}
@@ -74,9 +44,26 @@ export default function Login(props) {
         placeholder="Password"
         keyboardType="default"
       />
+      <TextInput
+        style={styles.input}
+        onChange= {(e) => {setPassword(e.nativeEvent.text)}}
+        value={password}
+        type="password"
+        placeholder="Confirm Password"
+        keyboardType="default"
+      />
+            <TextInput
+        style={styles.input}
+        onChange= {(e) => {setPassword(e.nativeEvent.text)}}
+        value={password}
+        type="text"
+        placeholder="Social Provider"
+        keyboardType="default"
+      />
       <WhiteSpace />
       <WhiteSpace />
-      <Button style={styles.button} onPress={() => submitForm()} type="primary">Login</Button> 
+
+      <Button style={styles.button} onPress={() => {props.navigation.navigate('Login')}} type="primary">Submit</Button> 
       <StatusBar style="auto" />
     </View>
   );
@@ -93,6 +80,7 @@ const styles = StyleSheet.create({
   header : {
     fontSize:30 ,
     fontWeight:"bold",
+    color:'#00292fe8'
   },
   input: {
     height: 40,
@@ -104,11 +92,12 @@ const styles = StyleSheet.create({
   },
   button: {
     borderRadius:40,
-    width:150
+    width:100,
+    height:35
   },
   img: {
-    width:120,
-    height:170,
+    width:90,
+    height:100,
   }
 });
   

@@ -4,7 +4,7 @@ import { main_styles } from '../styles';
 import { DataTable } from 'react-native-paper';
 import Button from '@ant-design/react-native/lib/button';
 
-export default function ExpenseHistory() {
+export default function ExpenseHistory(props) {
 
   return (
     <View style={styles.container}>
@@ -25,7 +25,7 @@ export default function ExpenseHistory() {
         <DataTable.Cell style={{paddingRight:10}}>Customer 1</DataTable.Cell>
         <DataTable.Cell style={{paddingRight:10}}>$ 220</DataTable.Cell>
         <DataTable.Cell style={{paddingRight:10}}><Button style={main_styles.button} size="small" type="primary">View</Button></DataTable.Cell>
-        <DataTable.Cell style={{paddingRight:10}}><Button style={main_styles.button} size="small" type="primary">Edit</Button></DataTable.Cell>
+        <DataTable.Cell style={{paddingRight:10}}><Button style={main_styles.button} size="small" type="primary" onPress={() => props.navigation.navigate('expenseEntry')}>Edit</Button></DataTable.Cell>
 
       </DataTable.Row>
       <DataTable.Row>
@@ -33,21 +33,21 @@ export default function ExpenseHistory() {
         <DataTable.Cell style={{paddingRight: 10}}>Customer 2</DataTable.Cell>
         <DataTable.Cell style={{paddingRight: 10}}>$ 250</DataTable.Cell>
         <DataTable.Cell style={{paddingRight:10}}><Button style={main_styles.button} size="small" type="primary">View</Button></DataTable.Cell>
-        <DataTable.Cell style={{paddingRight:10}}><Button style={main_styles.button} size="small" type="primary">Edit</Button></DataTable.Cell>
+        <DataTable.Cell style={{paddingRight:10}}><Button style={main_styles.button} size="small" type="primary" onPress={() => props.navigation.navigate('expenseEntry')}>Edit</Button></DataTable.Cell>
       </DataTable.Row>
       <DataTable.Row>
         <DataTable.Cell style={{paddingRight: 10}}>12/07/2022</DataTable.Cell>
         <DataTable.Cell style={{paddingRight: 10}}>Customer 1</DataTable.Cell>
         <DataTable.Cell style={{paddingRight: 10}}>$ 220</DataTable.Cell>
         <DataTable.Cell style={{paddingRight:10}}><Button style={main_styles.button} size="small" type="primary">View</Button></DataTable.Cell>
-        <DataTable.Cell style={{paddingRight:10}}><Button style={main_styles.button} size="small" type="primary">Edit</Button></DataTable.Cell>
+        <DataTable.Cell style={{paddingRight:10}}><Button style={main_styles.button} size="small" type="primary" onPress={() => props.navigation.navigate('expenseEntry')}>Edit</Button></DataTable.Cell>
       </DataTable.Row>
       <DataTable.Row>
       <DataTable.Cell style={{paddingRight: 10}}>12/06/2022</DataTable.Cell>
         <DataTable.Cell style={{paddingRight: 10}}>Customer 2</DataTable.Cell>
         <DataTable.Cell style={{paddingRight: 10}}>$ 250</DataTable.Cell>
         <DataTable.Cell style={{paddingRight:10}}><Button style={main_styles.button} size="small" type="primary">View</Button></DataTable.Cell>
-        <DataTable.Cell style={{paddingRight:10}}><Button style={main_styles.button} size="small" type="primary">Edit</Button></DataTable.Cell>
+        <DataTable.Cell style={{paddingRight:10}}><Button style={main_styles.button} size="small" type="primary" onPress={() => props.navigation.navigate('expenseEntry')}>Edit</Button></DataTable.Cell>
       </DataTable.Row>
     </DataTable>
     </ScrollView> 

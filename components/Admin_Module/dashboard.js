@@ -4,8 +4,6 @@ import Card from '@ant-design/react-native/lib/card';
 import Button from '@ant-design/react-native/lib/button';
 import { main_styles } from '../styles';
 import { Alert, Modal, Pressable } from "react-native";
-import {Picker} from "@react-native-picker/picker";
-import InputItem from '@ant-design/react-native/lib/input-item';
 import  WhiteSpace  from '@ant-design/react-native/lib/white-space';
 import DatePicker from 'react-native-date-picker';
 
@@ -23,10 +21,15 @@ export default function Dashboard(props) {
             <Card.Header title={<Text style={styles.header}>Total Outstanding</Text>} />
             <Card.Body>
               <View style={{ height: 50, padding:5 }}>
+                <View style={styles.dash}>
                 <Text style={styles.font }>Cash </Text>
+                <Text style={styles.font }>$ 2,23,432 </Text>
+                </View>
                 <WhiteSpace />
-
+                <View style={styles.dash}>
                 <Text style={styles.font}>Credit </Text>
+                <Text style={styles.font }>$ 3,65,323 </Text>
+                </View>
               </View>
             </Card.Body>
         </Card>
@@ -87,6 +90,7 @@ const styles = StyleSheet.create({
   font : {
     color: '#fff',
     fontSize:18,
+    fontWeight:'bold'
   },
   header: {
     color:'#fff', fontWeight:'bold', fontSize:25, textAlign:'center'
@@ -96,6 +100,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginTop: 22
+  },
+  dash: {
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'space-between', 
   },
   modalView: {
     margin: 20,

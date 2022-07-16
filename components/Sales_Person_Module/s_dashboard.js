@@ -14,11 +14,18 @@ export default function SalesPersonDashboard(props) {
         <WhiteSpace />     
         <WhiteSpace />
         <Card style={main_styles.dashboard}>
-            <Card.Header title={<Text style={styles.header}>Total Outstanding</Text>} />
+        <Card.Header title={<Text style={styles.header}>Total Outstanding</Text>} />
             <Card.Body>
-              <View style={{ height: 42 }}>
-                <Text style={styles.font }>Cash  </Text>
-                <Text style={styles.font}>Credit  </Text>
+              <View style={{ height: 50, padding:5 }}>
+                <View style={styles.dash}>
+                <Text style={styles.font }>Cash </Text>
+                <Text style={styles.font }>$ 2,23,432 </Text>
+                </View>
+                <WhiteSpace />
+                <View style={styles.dash}>
+                <Text style={styles.font}>Credit </Text>
+                <Text style={styles.font }>$ 3,65,323 </Text>
+                </View>
               </View>
             </Card.Body>
         </Card>
@@ -58,7 +65,12 @@ const styles = StyleSheet.create({
   },
   header: {
     color:'#fff', fontWeight:'bold', fontSize:25, textAlign:'center'
-  }
+  },
+  dash: {
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'space-between', 
+  },
 
 });
   

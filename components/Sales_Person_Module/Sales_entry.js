@@ -8,7 +8,6 @@ import { Alert, Modal, Pressable } from "react-native";
 import Card from '@ant-design/react-native/lib/card';
 
 
-// import { ExclamationCircleFill } from 'antd-mobile-icons';
 
 export default function SalesEntry() {
   const [modalVisible, setModalVisible] = useState(false);
@@ -17,6 +16,8 @@ export default function SalesEntry() {
   return (
     <View style={styles.container}>
         <Text style={main_styles.header}>Sales Entry</Text>
+        <WhiteSpace />
+        <WhiteSpace />
         <View style={main_styles.dropdown}>
           <Picker>
               <Picker.Item label='Customer1'></Picker.Item>
